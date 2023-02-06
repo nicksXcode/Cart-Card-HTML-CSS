@@ -1,0 +1,169 @@
+/* Font Import  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+/* Variables */
+:root {
+	/* Colors */
+	--color-darkcyan: hsl(158, 36%, 37%);
+	--color-gray: hsl(228, 12%, 48%);
+	--color-cream: hsl(30, 38%, 92%);
+	--color-white: hsl(0, 0%, 100%);
+	--color-darkblue: hsl(212, 21%, 14%);
+
+	/* Typography */
+	--fs-p: 14px;
+
+	/* Font Family */
+	--ff-fraunces: 'Fraunces', sans-serif;
+	--ff-montserrat: 'Montserrat', sans-serif;
+
+	/* Font Weigth  */
+	--fw-700: 700;
+	--fw-500: 500;
+}
+
+
+/* General Styles / Resets  */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--color-cream);
+}
+
+main {
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+p {
+	font-size: var(--fs-p);
+	font-family: var(--ff-montserrat);
+}
+
+h2 {
+	font-family: var(--ff-fraunces);
+}
+
+.btn {
+	background: var(--color-darkcyan);
+	width: 100%;
+	display: block;
+	padding: 15px;
+	border-radius: 10px;
+	text-align: center;
+	color: var(--color-white);
+	text-decoration: none;
+	font-family: var(--ff-montserrat);
+	font-weight: 500;
+	transition: 0.3s ease;
+}
+
+.btn img {
+	margin-right: 10px;
+}
+
+.btn:hover {
+	background: hsl(96, 53%, 12%);
+}
+
+/* Card Styles */
+
+.card {
+	background: var(--color-white);
+	width: 360px;
+	height: auto;
+	border-radius: 20px;
+	overflow: hidden;
+	
+	display: grid;
+	grid-template-rows: 250px 1fr;
+}
+
+
+/* Card Image */
+
+.card-image {
+	background: url(../images/image-product-mobile.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+@media (min-width: 855px) {
+	.card {
+		width: 50%;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.card-image {
+		background: url(../images/image-product-desktop.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+
+	.card-content h2 {
+		font-size: 2.5rem;
+	}
+}
+
+@media (min-width: 1638px) {
+	.card {
+		max-width: 819px;
+	}
+}
+
+
+
+/* Card Content */
+
+.card-content {
+	padding: 30px;
+	color: var(--color-gray);
+}
+
+.sub-title {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.card-content h2 {
+	color: var(--color-darkblue);
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1;
+	padding-block: 15px;
+}
+
+.card-desc {
+	line-height: 2;
+}
+
+.card-price {
+	display: flex;
+	align-items: center;
+	padding-block: 10px 0px;
+}
+
+.card-price h2{
+	font-weight: 700;
+	color: var(--color-darkcyan);
+}
+
+.card-price p {
+	margin-left: 10px;
+	text-decoration: line-through;
+}
